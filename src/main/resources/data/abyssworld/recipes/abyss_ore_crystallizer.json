@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "UPU",
+    "ACA",
+    "UPU"
+  ],
+  "key": {
+    "U": { "item": "abyssworld:unmelting_ice_crystal" },
+    "P": { "item": "abyssworld:permafrost_core" },
+    "A": { "item": "abyssworld:high_density_abyss_alloy" },
+    "C": { "item": "abyssworld:abyss_ore_amplifier" }
+  },
+  "result": { "item": "abyssworld:abyss_ore_crystallizer" }
+}

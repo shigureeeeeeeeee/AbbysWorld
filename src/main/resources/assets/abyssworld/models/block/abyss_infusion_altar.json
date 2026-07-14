@@ -1,0 +1,17 @@
+{
+  "parent": "minecraft:block/block",
+  "textures": {
+    "side": "abyssworld:block/infusion_altar_side",
+    "top": "abyssworld:block/infusion_altar_top",
+    "particle": "abyssworld:block/infusion_altar_side"
+  },
+  "elements": [
+    { "from": [1, 0, 1], "to": [15, 4, 15], "faces": { "down": { "texture": "#side" }, "up": { "texture": "#side" }, "north": { "texture": "#side" }, "south": { "texture": "#side" }, "west": { "texture": "#side" }, "east": { "texture": "#side" } } },
+    { "from": [3, 4, 3], "to": [13, 10, 13], "faces": { "up": { "texture": "#side" }, "north": { "texture": "#side" }, "south": { "texture": "#side" }, "west": { "texture": "#side" }, "east": { "texture": "#side" } } },
+    { "from": [0, 10, 0], "to": [16, 13, 16], "faces": { "down": { "texture": "#side" }, "up": { "texture": "#top" }, "north": { "texture": "#side" }, "south": { "texture": "#side" }, "west": { "texture": "#side" }, "east": { "texture": "#side" } } },
+    { "from": [2, 13, 2], "to": [5, 15, 5], "faces": { "up": { "texture": "#top" }, "north": { "texture": "#side" }, "south": { "texture": "#side" }, "west": { "texture": "#side" }, "east": { "texture": "#side" } } },
+    { "from": [11, 13, 2], "to": [14, 15, 5], "faces": { "up": { "texture": "#top" }, "north": { "texture": "#side" }, "south": { "texture": "#side" }, "west": { "texture": "#side" }, "east": { "texture": "#side" } } },
+    { "from": [2, 13, 11], "to": [5, 15, 14], "faces": { "up": { "texture": "#top" }, "north": { "texture": "#side" }, "south": { "texture": "#side" }, "west": { "texture": "#side" }, "east": { "texture": "#side" } } },
+    { "from": [11, 13, 11], "to": [14, 15, 14], "faces": { "up": { "texture": "#top" }, "north": { "texture": "#side" }, "south": { "texture": "#side" }, "west": { "texture": "#side" }, "east": { "texture": "#side" } } }
+  ]
+}

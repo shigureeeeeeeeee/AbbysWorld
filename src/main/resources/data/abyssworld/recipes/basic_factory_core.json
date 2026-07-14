@@ -1,0 +1,25 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "SCS",
+    "RMR",
+    "SCS"
+  ],
+  "key": {
+    "S": {
+      "item": "abyssworld:speed_upgrade"
+    },
+    "C": {
+      "item": "abyssworld:compressed_abyss_iron"
+    },
+    "R": {
+      "item": "minecraft:redstone"
+    },
+    "M": {
+      "item": "abyssworld:abyss_machine_casing"
+    }
+  },
+  "result": {
+    "item": "abyssworld:basic_factory_core"
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "type": "minecraft:smelting",
+  "ingredient": { "item": "abyssworld:amplified_iron_concentrate" },
+  "result": "minecraft:iron_ingot",
+  "experience": 0.7,
+  "cookingtime": 200
+}

@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [" R ", "RAR", " R "],
+  "key": {
+    "R": {"item": "abyssworld:singularity_residue"},
+    "A": {"item": "abyssworld:high_density_abyss_alloy"}
+  },
+  "result": {"item": "abyssworld:singularity_armor_plate", "count": 4}
+}

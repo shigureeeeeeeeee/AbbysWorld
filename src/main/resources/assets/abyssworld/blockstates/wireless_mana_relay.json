@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=north": {
+      "model": "abyssworld:block/wireless_mana_relay"
+    },
+    "facing=east": {
+      "model": "abyssworld:block/wireless_mana_relay",
+      "y": 90
+    },
+    "facing=south": {
+      "model": "abyssworld:block/wireless_mana_relay",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "abyssworld:block/wireless_mana_relay",
+      "y": 270
+    }
+  }
+}

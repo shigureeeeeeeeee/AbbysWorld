@@ -82,6 +82,11 @@ minecraft {
         }
 
         client {
+            // 開発用クライアントはログとメモリ設定でかなり重くなるため軽量化
+            jvmArgs '-Xmx6G', '-Xms2G', '-XX:+UseG1GC', '-XX:+UnlockExperimentalVMOptions', '-XX:G1NewSizePercent=20', '-XX:G1ReservePercent=20'
+            property 'forge.logging.console.level', 'warn'
+            property 'forge.logging.markers', ''
+
             // Comma-separated list of namespaces to load gametests from. Empty = all namespaces.
             property 'forge.enabledGameTestNamespaces', mod_id
         }

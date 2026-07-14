@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=north": {
+      "model": "abyssworld:block/cryo_mana_siphon"
+    },
+    "facing=east": {
+      "model": "abyssworld:block/cryo_mana_siphon",
+      "y": 90
+    },
+    "facing=south": {
+      "model": "abyssworld:block/cryo_mana_siphon",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "abyssworld:block/cryo_mana_siphon",
+      "y": 270
+    }
+  }
+}

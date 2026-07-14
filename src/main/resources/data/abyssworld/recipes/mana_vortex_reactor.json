@@ -1,0 +1,25 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "SUS",
+    "RMR",
+    "SUS"
+  ],
+  "key": {
+    "S": {
+      "item": "abyssworld:singularity_residue"
+    },
+    "U": {
+      "item": "abyssworld:five_layer_unified_core"
+    },
+    "R": {
+      "item": "abyssworld:thermal_matrix"
+    },
+    "M": {
+      "item": "abyssworld:abyss_mana_reservoir"
+    }
+  },
+  "result": {
+    "item": "abyssworld:mana_vortex_reactor"
+  }
+}

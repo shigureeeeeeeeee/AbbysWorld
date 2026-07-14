@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "CAC",
+    "AMA",
+    "CAC"
+  ],
+  "key": {
+    "C": { "item": "abyssworld:compressed_abyss_crystal" },
+    "A": { "item": "abyssworld:high_density_abyss_alloy" },
+    "M": { "item": "abyssworld:abyss_mana_pool" }
+  },
+  "result": { "item": "abyssworld:abyss_mana_condenser" }
+}

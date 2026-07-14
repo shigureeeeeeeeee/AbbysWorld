@@ -1,0 +1,7 @@
+{
+  "type": "abyssworld:forgotten_grove_citadel",
+  "biomes": "#abyssworld:has_structure/forgotten_grove_citadel",
+  "spawn_overrides": {},
+  "step": "surface_structures",
+  "terrain_adaptation": "beard_thin"
+}

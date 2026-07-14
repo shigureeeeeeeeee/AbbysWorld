@@ -1,0 +1,25 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "VAV",
+    "CMC",
+    "VAV"
+  ],
+  "key": {
+    "V": {
+      "item": "abyssworld:awakened_vine"
+    },
+    "A": {
+      "item": "abyssworld:primordial_sap"
+    },
+    "C": {
+      "item": "abyssworld:compressed_abyss_crystal"
+    },
+    "M": {
+      "item": "abyssworld:abyss_mana_pool"
+    }
+  },
+  "result": {
+    "item": "abyssworld:verdant_mana_bloom"
+  }
+}

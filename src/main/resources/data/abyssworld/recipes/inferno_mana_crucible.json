@@ -1,0 +1,25 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "EAE",
+    "CMC",
+    "EAE"
+  ],
+  "key": {
+    "E": {
+      "item": "abyssworld:eternal_flame"
+    },
+    "A": {
+      "item": "minecraft:blaze_rod"
+    },
+    "C": {
+      "item": "abyssworld:compressed_abyss_crystal"
+    },
+    "M": {
+      "item": "abyssworld:abyss_mana_condenser"
+    }
+  },
+  "result": {
+    "item": "abyssworld:inferno_mana_crucible"
+  }
+}

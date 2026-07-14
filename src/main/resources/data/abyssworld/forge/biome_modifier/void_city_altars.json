@@ -1,0 +1,6 @@
+{
+  "type": "forge:add_features",
+  "biomes": "abyssworld:void_city",
+  "features": "abyssworld:void_city_altar",
+  "step": "surface_structures"
+}

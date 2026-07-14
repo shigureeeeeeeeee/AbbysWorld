@@ -1,0 +1,9 @@
+{
+  "parent": "abyssworld:block/abyss_mana_condenser",
+  "textures": {
+    "side": "abyssworld:block/void_mana_tap_side",
+    "front": "abyssworld:block/void_mana_tap_front",
+    "top": "abyssworld:block/void_mana_tap_top",
+    "particle": "abyssworld:block/void_mana_tap_side"
+  }
+}

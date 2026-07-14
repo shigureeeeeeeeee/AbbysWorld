@@ -1,0 +1,7 @@
+{
+  "type": "minecraft:smelting",
+  "ingredient": { "item": "abyssworld:crushed_abyss_iron" },
+  "result": "abyssworld:abyss_iron_ingot",
+  "experience": 1.0,
+  "cookingtime": 200
+}

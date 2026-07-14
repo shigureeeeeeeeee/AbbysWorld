@@ -1,6 +1,10 @@
 {
   "type": "forge:add_features",
   "biomes": "abyssworld:flesh_mine",
-  "features": "abyssworld:flesh_deposit_deposit",
+  "features": [
+    "abyssworld:abyss_iron_ore",
+    "abyssworld:abyss_crystal_ore",
+    "abyssworld:flesh_deposit_deposit"
+  ],
   "step": "underground_ores"
 }

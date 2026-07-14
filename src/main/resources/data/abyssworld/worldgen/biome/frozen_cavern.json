@@ -17,15 +17,15 @@
   "carvers": { "air": ["minecraft:cave", "minecraft:canyon"] },
   "features": [
     [], [], [], [], [], [],
-    ["abyssworld:abyss_iron_ore", "abyssworld:abyss_crystal_ore"],
+    [],
     [], [],
     ["minecraft:ice_spike", "minecraft:ice_patch"],
     []
   ],
   "spawners": {
     "monster": [
-      { "type": "minecraft:stray", "weight": 80, "minCount": 2, "maxCount": 4 },
-      { "type": "minecraft:skeleton", "weight": 40, "minCount": 1, "maxCount": 3 }
+      { "type": "abyssworld:glacial_wraith", "weight": 80, "minCount": 2, "maxCount": 4 },
+      { "type": "abyssworld:frost_marauder", "weight": 22, "minCount": 1, "maxCount": 2 }
     ]
   },
   "spawn_costs": {}

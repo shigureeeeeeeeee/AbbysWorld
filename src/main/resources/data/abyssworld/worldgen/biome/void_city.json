@@ -17,15 +17,15 @@
   "carvers": { "air": ["minecraft:cave", "minecraft:canyon"] },
   "features": [
     [], [], [], [], [], [],
-    ["abyssworld:abyss_iron_ore", "abyssworld:abyss_crystal_ore"],
+    [],
     [], [],
     [],
     []
   ],
   "spawners": {
     "monster": [
-      { "type": "minecraft:enderman", "weight": 80, "minCount": 1, "maxCount": 3 },
-      { "type": "minecraft:phantom", "weight": 20, "minCount": 1, "maxCount": 2 }
+      { "type": "abyssworld:void_shade", "weight": 80, "minCount": 1, "maxCount": 3 },
+      { "type": "abyssworld:void_reaper", "weight": 22, "minCount": 1, "maxCount": 2 }
     ]
   },
   "spawn_costs": {}

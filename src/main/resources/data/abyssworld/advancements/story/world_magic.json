@@ -1,0 +1,63 @@
+{
+  "parent": "abyssworld:story/spellcraft",
+  "display": {
+    "icon": {
+      "item": "abyssworld:verdant_nexus"
+    },
+    "title": {
+      "translate": "advancements.abyssworld.world_magic.title"
+    },
+    "description": {
+      "translate": "advancements.abyssworld.world_magic.description"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "verdant": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "abyssworld:verdant_nexus"
+            ]
+          }
+        ]
+      }
+    },
+    "gathering": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "abyssworld:gathering_nexus"
+            ]
+          }
+        ]
+      }
+    },
+    "warding": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "abyssworld:warding_nexus"
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "requirements": [
+    [
+      "verdant",
+      "gathering",
+      "warding"
+    ]
+  ]
+}

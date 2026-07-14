@@ -1,0 +1,8 @@
+{
+  "variants": {
+    "facing=north": { "model": "abyssworld:block/creative_mana_source" },
+    "facing=east": { "model": "abyssworld:block/creative_mana_source", "y": 90 },
+    "facing=south": { "model": "abyssworld:block/creative_mana_source", "y": 180 },
+    "facing=west": { "model": "abyssworld:block/creative_mana_source", "y": 270 }
+  }
+}

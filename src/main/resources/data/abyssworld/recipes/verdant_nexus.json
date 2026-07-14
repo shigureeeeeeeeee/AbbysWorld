@@ -1,0 +1,25 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "VGV",
+    "PMP",
+    "VGV"
+  ],
+  "key": {
+    "V": {
+      "item": "abyssworld:awakened_vine"
+    },
+    "G": {
+      "item": "abyssworld:glyph_effect_heal"
+    },
+    "P": {
+      "item": "abyssworld:primordial_sap"
+    },
+    "M": {
+      "item": "abyssworld:abyss_mana_pool"
+    }
+  },
+  "result": {
+    "item": "abyssworld:verdant_nexus"
+  }
+}

@@ -48,8 +48,8 @@ public class AbyssGodCatalystItem extends Item {
     }
 
     private boolean trySummon(Level level, @Nullable Player player, InteractionHand hand, BlockPos spawnPos) {
-        if (level.isClientSide || player == null || !level.dimension().equals(AbyssKeyItem.ABYSS)) {
-            if (player != null && !level.isClientSide && !level.dimension().equals(AbyssKeyItem.ABYSS)) {
+        if (level.isClientSide || player == null || !AbyssKeyItem.isAbyssDimension(level.dimension())) {
+            if (player != null && !level.isClientSide && !AbyssKeyItem.isAbyssDimension(level.dimension())) {
                 player.displayClientMessage(Component.translatable("item.abyssworld.abyss_god_catalyst.wrong_dimension")
                         .withStyle(ChatFormatting.RED), true);
             }

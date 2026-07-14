@@ -1,0 +1,6 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": ["P P", "PPP", "PPP"],
+  "key": {"P": {"item": "abyssworld:singularity_armor_plate"}},
+  "result": {"item": "abyssworld:singularity_abyss_chestplate"}
+}

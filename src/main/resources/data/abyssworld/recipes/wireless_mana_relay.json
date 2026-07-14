@@ -1,0 +1,25 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "ESE",
+    "RMR",
+    "ESE"
+  ],
+  "key": {
+    "E": {
+      "item": "minecraft:ender_eye"
+    },
+    "S": {
+      "item": "abyssworld:spatial_anchor_crystal"
+    },
+    "R": {
+      "item": "abyssworld:resonance_matrix"
+    },
+    "M": {
+      "item": "abyssworld:abyss_mana_reservoir"
+    }
+  },
+  "result": {
+    "item": "abyssworld:wireless_mana_relay"
+  }
+}

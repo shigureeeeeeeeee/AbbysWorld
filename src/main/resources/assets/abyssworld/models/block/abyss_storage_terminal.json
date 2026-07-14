@@ -1,0 +1,9 @@
+{
+  "parent": "abyssworld:block/abyss_mana_condenser",
+  "textures": {
+    "side": "abyssworld:block/abyss_storage_terminal_side",
+    "front": "abyssworld:block/abyss_storage_terminal_front",
+    "top": "abyssworld:block/abyss_storage_terminal_top",
+    "particle": "abyssworld:block/abyss_storage_terminal_side"
+  }
+}

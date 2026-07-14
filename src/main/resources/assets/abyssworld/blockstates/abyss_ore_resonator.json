@@ -1,0 +1,8 @@
+{
+  "variants": {
+    "facing=north": { "model": "abyssworld:block/abyss_ore_resonator" },
+    "facing=east": { "model": "abyssworld:block/abyss_ore_resonator", "y": 90 },
+    "facing=south": { "model": "abyssworld:block/abyss_ore_resonator", "y": 180 },
+    "facing=west": { "model": "abyssworld:block/abyss_ore_resonator", "y": 270 }
+  }
+}

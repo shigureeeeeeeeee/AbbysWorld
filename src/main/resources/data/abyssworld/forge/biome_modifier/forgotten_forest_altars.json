@@ -1,0 +1,6 @@
+{
+  "type": "forge:add_features",
+  "biomes": "abyssworld:forgotten_forest",
+  "features": "abyssworld:forgotten_forest_altar",
+  "step": "surface_structures"
+}

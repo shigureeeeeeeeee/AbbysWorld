@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " P ",
+    "PXP",
+    " C "
+  ],
+  "key": {
+    "P": {
+      "item": "minecraft:paper"
+    },
+    "X": {
+      "item": "abyssworld:cinder_heart"
+    },
+    "C": {
+      "item": "abyssworld:abyss_crystal"
+    }
+  },
+  "result": {
+    "item": "abyssworld:glyph_augment_power"
+  }
+}

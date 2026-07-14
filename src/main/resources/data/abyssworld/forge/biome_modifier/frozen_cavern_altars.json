@@ -1,0 +1,6 @@
+{
+  "type": "forge:add_features",
+  "biomes": "abyssworld:frozen_cavern",
+  "features": "abyssworld:frozen_cavern_altar",
+  "step": "surface_structures"
+}

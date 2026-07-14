@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {"item": "abyssworld:abyss_armor_module_frame"},
+    {"item": "abyssworld:void_stabilizer"}
+  ],
+  "result": {"item": "abyssworld:void_armor_module"}
+}

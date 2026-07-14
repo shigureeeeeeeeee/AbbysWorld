@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/orientable",
+  "textures": {
+    "side": "abyssworld:block/ore_crystallizer_side",
+    "top": "abyssworld:block/ore_crystallizer_top",
+    "front": "abyssworld:block/ore_crystallizer_front"
+  }
+}

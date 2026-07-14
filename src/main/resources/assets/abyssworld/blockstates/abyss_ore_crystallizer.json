@@ -1,0 +1,8 @@
+{
+  "variants": {
+    "facing=north": { "model": "abyssworld:block/abyss_ore_crystallizer" },
+    "facing=east": { "model": "abyssworld:block/abyss_ore_crystallizer", "y": 90 },
+    "facing=south": { "model": "abyssworld:block/abyss_ore_crystallizer", "y": 180 },
+    "facing=west": { "model": "abyssworld:block/abyss_ore_crystallizer", "y": 270 }
+  }
+}

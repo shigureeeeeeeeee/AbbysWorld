@@ -1,0 +1,25 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "CBC",
+    "RMR",
+    "CBC"
+  ],
+  "key": {
+    "C": {
+      "item": "abyssworld:compressed_abyss_crystal"
+    },
+    "B": {
+      "item": "abyssworld:basic_factory_core"
+    },
+    "R": {
+      "item": "abyssworld:resonance_matrix"
+    },
+    "M": {
+      "item": "abyssworld:abyss_machine_casing"
+    }
+  },
+  "result": {
+    "item": "abyssworld:advanced_factory_core"
+  }
+}

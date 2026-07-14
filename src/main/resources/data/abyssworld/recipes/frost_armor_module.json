@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {"item": "abyssworld:abyss_armor_module_frame"},
+    {"item": "abyssworld:permafrost_core"}
+  ],
+  "result": {"item": "abyssworld:frost_armor_module"}
+}

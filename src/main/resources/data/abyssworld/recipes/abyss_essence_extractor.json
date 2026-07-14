@@ -1,0 +1,25 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "GCG",
+    "AMA",
+    "GCG"
+  ],
+  "key": {
+    "G": {
+      "item": "minecraft:glass"
+    },
+    "C": {
+      "item": "abyssworld:compressed_abyss_crystal"
+    },
+    "A": {
+      "item": "abyssworld:abyss_iron_ingot"
+    },
+    "M": {
+      "item": "abyssworld:abyss_machine_casing"
+    }
+  },
+  "result": {
+    "item": "abyssworld:abyss_essence_extractor"
+  }
+}

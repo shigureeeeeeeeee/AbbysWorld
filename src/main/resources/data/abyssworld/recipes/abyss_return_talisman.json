@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " A ",
+    "SCS",
+    " A "
+  ],
+  "key": {
+    "A": { "item": "abyssworld:compressed_abyss_crystal" },
+    "S": { "item": "abyssworld:spatial_anchor_crystal" },
+    "C": { "item": "minecraft:compass" }
+  },
+  "result": { "item": "abyssworld:abyss_return_talisman" }
+}

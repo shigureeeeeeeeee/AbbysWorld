@@ -1,0 +1,6 @@
+{
+  "type": "forge:add_features",
+  "biomes": "abyssworld:flesh_mine",
+  "features": "abyssworld:flesh_mine_altar",
+  "step": "surface_structures"
+}

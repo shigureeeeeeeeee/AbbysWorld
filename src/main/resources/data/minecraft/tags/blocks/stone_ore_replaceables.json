@@ -1,0 +1,11 @@
+{
+  "replace": false,
+  "values": [
+    "abyssworld:abyss_stone",
+    "abyssworld:forgotten_stone",
+    "abyssworld:ash_stone",
+    "abyssworld:frozen_stone",
+    "abyssworld:flesh_stone",
+    "abyssworld:void_stone"
+  ]
+}

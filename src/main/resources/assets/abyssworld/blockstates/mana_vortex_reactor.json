@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=north": {
+      "model": "abyssworld:block/mana_vortex_reactor"
+    },
+    "facing=east": {
+      "model": "abyssworld:block/mana_vortex_reactor",
+      "y": 90
+    },
+    "facing=south": {
+      "model": "abyssworld:block/mana_vortex_reactor",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "abyssworld:block/mana_vortex_reactor",
+      "y": 270
+    }
+  }
+}

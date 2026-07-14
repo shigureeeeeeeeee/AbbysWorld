@@ -1,0 +1,4 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": { "layer0": "abyssworld:item/raw_abyss_iron" }
+}

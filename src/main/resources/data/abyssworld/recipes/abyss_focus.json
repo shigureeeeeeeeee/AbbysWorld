@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " C ",
+    "CIC",
+    " C "
+  ],
+  "key": {
+    "C": { "item": "abyssworld:abyss_crystal" },
+    "I": { "item": "abyssworld:abyss_iron_ingot" }
+  },
+  "result": { "item": "abyssworld:abyss_focus" }
+}

@@ -1,0 +1,26 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "IGI",
+    "RCR",
+    "IGI"
+  ],
+  "key": {
+    "I": {
+      "item": "abyssworld:abyss_iron_ingot"
+    },
+    "G": {
+      "item": "minecraft:glass"
+    },
+    "R": {
+      "item": "minecraft:redstone"
+    },
+    "C": {
+      "item": "abyssworld:abyss_crystal"
+    }
+  },
+  "result": {
+    "item": "abyssworld:abyss_item_conduit",
+    "count": 8
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "APA",
+    "MIM",
+    "APA"
+  ],
+  "key": {
+    "A": {
+      "item": "abyssworld:high_density_abyss_alloy"
+    },
+    "P": {
+      "item": "abyssworld:abyss_mana_pool"
+    },
+    "M": {
+      "item": "abyssworld:compressed_abyss_iron"
+    },
+    "I": {
+      "item": "abyssworld:abyss_infusion_altar"
+    }
+  },
+  "result": {
+    "item": "abyssworld:abyss_resource_harvester"
+  }
+}

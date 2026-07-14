@@ -1,0 +1,25 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "IAI",
+    "CMC",
+    "IAI"
+  ],
+  "key": {
+    "I": {
+      "item": "abyssworld:unmelting_ice_crystal"
+    },
+    "A": {
+      "item": "minecraft:blue_ice"
+    },
+    "C": {
+      "item": "abyssworld:compressed_abyss_crystal"
+    },
+    "M": {
+      "item": "abyssworld:abyss_mana_condenser"
+    }
+  },
+  "result": {
+    "item": "abyssworld:cryo_mana_siphon"
+  }
+}

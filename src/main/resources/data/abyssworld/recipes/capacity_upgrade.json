@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " G ",
+    "RCR",
+    " G "
+  ],
+  "key": {
+    "G": {
+      "item": "minecraft:glass"
+    },
+    "R": {
+      "item": "minecraft:redstone"
+    },
+    "C": {
+      "item": "abyssworld:compressed_abyss_crystal"
+    }
+  },
+  "result": {
+    "item": "abyssworld:capacity_upgrade"
+  }
+}

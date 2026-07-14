@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [" R ", "RIR", " R "],
+  "key": {
+    "R": {"item": "abyssworld:crystallization_residue"},
+    "I": {"item": "abyssworld:compressed_abyss_iron"}
+  },
+  "result": {"item": "abyssworld:crystalline_armor_plate", "count": 4}
+}

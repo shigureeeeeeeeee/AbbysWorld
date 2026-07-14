@@ -9,9 +9,39 @@
     "announce_to_chat": true
   },
   "criteria": {
-    "entered_abyss": {
+    "entered_legacy_abyss": {
       "trigger": "minecraft:changed_dimension",
       "conditions": { "to": "abyssworld:abyss" }
+    },
+    "entered_forgotten_forest": {
+      "trigger": "minecraft:changed_dimension",
+      "conditions": { "to": "abyssworld:forgotten_forest" }
+    },
+    "entered_ash_wasteland": {
+      "trigger": "minecraft:changed_dimension",
+      "conditions": { "to": "abyssworld:ash_wasteland" }
+    },
+    "entered_frozen_cavern": {
+      "trigger": "minecraft:changed_dimension",
+      "conditions": { "to": "abyssworld:frozen_cavern" }
+    },
+    "entered_flesh_mine": {
+      "trigger": "minecraft:changed_dimension",
+      "conditions": { "to": "abyssworld:flesh_mine" }
+    },
+    "entered_void_city": {
+      "trigger": "minecraft:changed_dimension",
+      "conditions": { "to": "abyssworld:void_city" }
     }
-  }
+  },
+  "requirements": [
+    [
+      "entered_legacy_abyss",
+      "entered_forgotten_forest",
+      "entered_ash_wasteland",
+      "entered_frozen_cavern",
+      "entered_flesh_mine",
+      "entered_void_city"
+    ]
+  ]
 }

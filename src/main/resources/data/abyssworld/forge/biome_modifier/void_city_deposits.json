@@ -1,6 +1,10 @@
 {
   "type": "forge:add_features",
   "biomes": "abyssworld:void_city",
-  "features": "abyssworld:void_crystal_deposit",
+  "features": [
+    "abyssworld:abyss_iron_ore",
+    "abyssworld:abyss_crystal_ore",
+    "abyssworld:void_crystal_deposit"
+  ],
   "step": "underground_ores"
 }

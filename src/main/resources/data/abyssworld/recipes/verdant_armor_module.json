@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {"item": "abyssworld:abyss_armor_module_frame"},
+    {"item": "abyssworld:rotten_forest_core"}
+  ],
+  "result": {"item": "abyssworld:verdant_armor_module"}
+}

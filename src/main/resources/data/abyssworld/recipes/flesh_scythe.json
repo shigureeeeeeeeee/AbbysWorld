@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [" L ", "NLN", " I "],
+  "key": {
+    "L": { "item": "abyssworld:living_sinew" },
+    "N": { "item": "abyssworld:primordial_nerve" },
+    "I": { "item": "abyssworld:abyss_iron_ingot" }
+  },
+  "result": { "item": "abyssworld:flesh_scythe" }
+}

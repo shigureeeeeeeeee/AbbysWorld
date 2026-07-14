@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " H ",
+    "RCR",
+    " H "
+  ],
+  "key": {
+    "H": {
+      "item": "minecraft:hopper"
+    },
+    "R": {
+      "item": "minecraft:redstone"
+    },
+    "C": {
+      "item": "abyssworld:abyss_crystal"
+    }
+  },
+  "result": {
+    "item": "abyssworld:auto_export_upgrade"
+  }
+}

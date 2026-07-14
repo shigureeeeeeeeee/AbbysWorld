@@ -1,0 +1,6 @@
+{
+  "type": "forge:add_features",
+  "biomes": "abyssworld:ash_wasteland",
+  "features": "abyssworld:ash_wasteland_altar",
+  "step": "surface_structures"
+}

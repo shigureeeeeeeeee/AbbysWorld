@@ -1,0 +1,9 @@
+{
+  "parent": "abyssworld:block/abyss_mana_condenser",
+  "textures": {
+    "side": "abyssworld:block/leyline_miner_side",
+    "front": "abyssworld:block/leyline_miner_front",
+    "top": "abyssworld:block/leyline_miner_top",
+    "particle": "abyssworld:block/leyline_miner_side"
+  }
+}

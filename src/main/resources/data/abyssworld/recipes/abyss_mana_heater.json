@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": ["ICI", "AFA", " I "],
+  "key": {
+    "I": { "item": "abyssworld:abyss_iron_ingot" },
+    "C": { "item": "abyssworld:abyss_crystal" },
+    "A": { "item": "abyssworld:abyss_mana_conduit" },
+    "F": { "item": "minecraft:furnace" }
+  },
+  "result": { "item": "abyssworld:abyss_mana_heater" }
+}

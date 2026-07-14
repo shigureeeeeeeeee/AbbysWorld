@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [" A ", "ASA", " A "],
+  "key": {
+    "A": {"item": "abyssworld:high_density_abyss_alloy"},
+    "S": {"item": "abyssworld:singularity_residue"}
+  },
+  "result": {"item": "abyssworld:abyss_armor_module_frame"}
+}

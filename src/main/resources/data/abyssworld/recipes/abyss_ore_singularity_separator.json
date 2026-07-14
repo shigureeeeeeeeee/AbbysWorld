@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "WFW",
+    "ACA",
+    "WGW"
+  ],
+  "key": {
+    "W": { "item": "abyssworld:world_law_fragment" },
+    "F": { "item": "abyssworld:five_layer_unified_core" },
+    "A": { "item": "abyssworld:high_density_abyss_alloy" },
+    "C": { "item": "abyssworld:abyss_ore_resonator" },
+    "G": { "item": "abyssworld:abyss_god_core" }
+  },
+  "result": { "item": "abyssworld:abyss_ore_singularity_separator" }
+}

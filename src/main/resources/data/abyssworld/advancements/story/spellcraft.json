@@ -1,0 +1,37 @@
+{
+  "parent": "abyssworld:story/root",
+  "display": {
+    "icon": {
+      "item": "abyssworld:abyss_spellbook"
+    },
+    "title": {
+      "translate": "advancements.abyssworld.spellcraft.title"
+    },
+    "description": {
+      "translate": "advancements.abyssworld.spellcraft.description"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "has_spellbook": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "abyssworld:abyss_spellbook"
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_spellbook"
+    ]
+  ]
+}

@@ -1,0 +1,9 @@
+{
+  "parent": "abyssworld:block/abyss_mana_condenser",
+  "textures": {
+    "side": "abyssworld:block/mana_vortex_reactor_side",
+    "front": "abyssworld:block/mana_vortex_reactor_front",
+    "top": "abyssworld:block/mana_vortex_reactor_top",
+    "particle": "abyssworld:block/mana_vortex_reactor_side"
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/orientable",
+  "textures": {
+    "side": "abyssworld:block/mana_heater_side",
+    "top": "abyssworld:block/mana_heater_top",
+    "front": "abyssworld:block/mana_heater_front"
+  }
+}

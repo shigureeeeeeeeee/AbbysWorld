@@ -1,0 +1,8 @@
+{
+  "variants": {
+    "facing=north": { "model": "abyssworld:block/abyss_mana_condenser" },
+    "facing=east": { "model": "abyssworld:block/abyss_mana_condenser", "y": 90 },
+    "facing=south": { "model": "abyssworld:block/abyss_mana_condenser", "y": 180 },
+    "facing=west": { "model": "abyssworld:block/abyss_mana_condenser", "y": 270 }
+  }
+}

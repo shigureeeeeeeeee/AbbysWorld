@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [" G ", "TGT", " I "],
+  "key": {
+    "G": { "item": "abyssworld:glacial_plate" },
+    "T": { "item": "abyssworld:unmelting_ice_crystal" },
+    "I": { "item": "abyssworld:abyss_iron_ingot" }
+  },
+  "result": { "item": "abyssworld:frost_lance" }
+}

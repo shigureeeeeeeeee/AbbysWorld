@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "ACA",
+    "CMC",
+    "ACA"
+  ],
+  "key": {
+    "A": { "item": "abyssworld:abyss_iron_ingot" },
+    "C": { "item": "abyssworld:compressed_abyss_crystal" },
+    "M": { "item": "abyssworld:abyss_mana_conduit" }
+  },
+  "result": { "item": "abyssworld:portable_mana_core" }
+}

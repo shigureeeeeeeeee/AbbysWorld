@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": ["IPI", "ACA", " I "],
+  "key": {
+    "I": { "item": "abyssworld:abyss_iron_ingot" },
+    "P": { "item": "minecraft:piston" },
+    "A": { "item": "abyssworld:abyss_mana_conduit" },
+    "C": { "item": "abyssworld:abyss_crystal" }
+  },
+  "result": { "item": "abyssworld:abyss_ore_crusher" }
+}

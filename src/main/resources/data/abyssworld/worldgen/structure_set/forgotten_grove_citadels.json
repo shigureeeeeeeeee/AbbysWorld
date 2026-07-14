@@ -1,0 +1,15 @@
+{
+  "placement": {
+    "type": "minecraft:random_spread",
+    "salt": 19476133,
+    "separation": 24,
+    "spacing": 52,
+    "spread_type": "triangular"
+  },
+  "structures": [
+    {
+      "structure": "abyssworld:forgotten_grove_citadel",
+      "weight": 1
+    }
+  ]
+}

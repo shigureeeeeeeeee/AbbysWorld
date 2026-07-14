@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " CA",
+    " PM",
+    "P  "
+  ],
+  "key": {
+    "C": { "item": "abyssworld:compressed_abyss_crystal" },
+    "A": { "item": "abyssworld:high_density_abyss_alloy" },
+    "P": { "item": "abyssworld:abyss_iron_ingot" },
+    "M": { "item": "abyssworld:abyss_mana_conduit" }
+  },
+  "result": { "item": "abyssworld:abyss_mana_multitool" }
+}

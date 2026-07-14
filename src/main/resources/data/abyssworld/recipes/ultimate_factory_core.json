@@ -1,0 +1,25 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "UAU",
+    "RMR",
+    "UAU"
+  ],
+  "key": {
+    "U": {
+      "item": "abyssworld:high_density_abyss_alloy"
+    },
+    "A": {
+      "item": "abyssworld:advanced_factory_core"
+    },
+    "R": {
+      "item": "abyssworld:singularity_residue"
+    },
+    "M": {
+      "item": "abyssworld:abyss_machine_casing"
+    }
+  },
+  "result": {
+    "item": "abyssworld:ultimate_factory_core"
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "parent": "abyssworld:story/enter_abyss",
+  "display": {
+    "icon": {
+      "item": "abyssworld:grove_heart_key"
+    },
+    "title": {
+      "translate": "advancements.abyssworld.grove_citadel.title"
+    },
+    "description": {
+      "translate": "advancements.abyssworld.grove_citadel.description"
+    },
+    "frame": "challenge",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "heart_key": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "abyssworld:grove_heart_key"
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "requirements": [
+    [
+      "heart_key"
+    ]
+  ],
+  "rewards": {
+    "experience": 150
+  }
+}

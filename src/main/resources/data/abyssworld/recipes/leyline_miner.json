@@ -1,0 +1,31 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "ASA",
+    "CMC",
+    "ETE"
+  ],
+  "key": {
+    "A": {
+      "item": "abyssworld:high_density_abyss_alloy"
+    },
+    "S": {
+      "item": "abyssworld:spatial_anchor_crystal"
+    },
+    "C": {
+      "item": "abyssworld:compressed_abyss_crystal"
+    },
+    "M": {
+      "item": "abyssworld:abyss_machine_casing"
+    },
+    "E": {
+      "item": "minecraft:ender_eye"
+    },
+    "T": {
+      "item": "abyssworld:thermal_matrix"
+    }
+  },
+  "result": {
+    "item": "abyssworld:leyline_miner"
+  }
+}

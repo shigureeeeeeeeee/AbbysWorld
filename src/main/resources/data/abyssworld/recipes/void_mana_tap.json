@@ -1,0 +1,25 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "EVE",
+    "CMC",
+    "EVE"
+  ],
+  "key": {
+    "E": {
+      "item": "minecraft:ender_eye"
+    },
+    "V": {
+      "item": "abyssworld:void_stabilizer"
+    },
+    "C": {
+      "item": "abyssworld:high_density_abyss_alloy"
+    },
+    "M": {
+      "item": "abyssworld:abyss_mana_condenser"
+    }
+  },
+  "result": {
+    "item": "abyssworld:void_mana_tap"
+  }
+}

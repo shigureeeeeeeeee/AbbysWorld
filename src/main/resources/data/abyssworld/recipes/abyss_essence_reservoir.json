@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "GAG",
+    "AMA",
+    "GAG"
+  ],
+  "key": {
+    "G": {
+      "item": "minecraft:glass"
+    },
+    "A": {
+      "item": "abyssworld:compressed_abyss_crystal"
+    },
+    "M": {
+      "item": "abyssworld:abyss_machine_casing"
+    }
+  },
+  "result": {
+    "item": "abyssworld:abyss_essence_reservoir"
+  }
+}

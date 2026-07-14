@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "ACA",
+    "C C",
+    "ACA"
+  ],
+  "key": {
+    "A": { "item": "abyssworld:high_density_abyss_alloy" },
+    "C": { "item": "abyssworld:abyss_crystal" }
+  },
+  "result": { "item": "abyssworld:abyss_attraction_ring" }
+}

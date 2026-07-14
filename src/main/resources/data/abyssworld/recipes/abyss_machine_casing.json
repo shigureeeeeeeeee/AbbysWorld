@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "III",
+    "ISI",
+    "III"
+  ],
+  "key": {
+    "I": { "item": "abyssworld:abyss_iron_ingot" },
+    "S": { "item": "abyssworld:abyss_stone" }
+  },
+  "result": { "item": "abyssworld:abyss_machine_casing", "count": 8 }
+}

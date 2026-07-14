@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "HCH",
+    "CMC",
+    "HCH"
+  ],
+  "key": {
+    "H": {
+      "item": "abyssworld:high_density_abyss_alloy"
+    },
+    "C": {
+      "item": "abyssworld:compressed_abyss_crystal"
+    },
+    "M": {
+      "item": "abyssworld:abyss_mana_condenser"
+    }
+  },
+  "result": {
+    "item": "abyssworld:abyss_mana_reservoir"
+  }
+}

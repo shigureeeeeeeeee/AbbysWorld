@@ -1,0 +1,9 @@
+{
+  "parent": "abyssworld:block/abyss_mana_condenser",
+  "textures": {
+    "side": "abyssworld:block/inferno_mana_crucible_side",
+    "front": "abyssworld:block/inferno_mana_crucible_front",
+    "top": "abyssworld:block/inferno_mana_crucible_top",
+    "particle": "abyssworld:block/inferno_mana_crucible_side"
+  }
+}

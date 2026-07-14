@@ -1,0 +1,25 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "HGH",
+    "PMP",
+    "HGH"
+  ],
+  "key": {
+    "H": {
+      "item": "minecraft:hopper"
+    },
+    "G": {
+      "item": "abyssworld:glyph_effect_pull"
+    },
+    "P": {
+      "item": "abyssworld:living_sinew"
+    },
+    "M": {
+      "item": "abyssworld:abyss_mana_pool"
+    }
+  },
+  "result": {
+    "item": "abyssworld:gathering_nexus"
+  }
+}

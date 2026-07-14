@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " C ",
+    "ABA",
+    "AAA"
+  ],
+  "key": {
+    "C": { "item": "abyssworld:abyss_focus" },
+    "B": { "item": "abyssworld:compressed_abyss_iron" },
+    "A": { "item": "abyssworld:void_stone" }
+  },
+  "result": { "item": "abyssworld:abyss_infusion_altar" }
+}

@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "HCH",
+    "PMP",
+    "HCH"
+  ],
+  "key": {
+    "H": { "item": "abyssworld:high_density_abyss_alloy" },
+    "C": { "item": "abyssworld:compressed_abyss_crystal" },
+    "P": { "item": "minecraft:piston" },
+    "M": { "item": "abyssworld:abyss_ore_crusher" }
+  },
+  "result": { "item": "abyssworld:abyss_ore_refinery" }
+}

@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/orientable",
+  "textures": {
+    "side": "abyssworld:block/ore_amplifier_side",
+    "top": "abyssworld:block/ore_amplifier_top",
+    "front": "abyssworld:block/ore_amplifier_front"
+  }
+}

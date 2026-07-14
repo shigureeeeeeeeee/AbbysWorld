@@ -1,0 +1,9 @@
+{
+  "parent": "abyssworld:block/abyss_mana_condenser",
+  "textures": {
+    "side": "abyssworld:block/verdant_mana_bloom_side",
+    "front": "abyssworld:block/verdant_mana_bloom_front",
+    "top": "abyssworld:block/verdant_mana_bloom_top",
+    "particle": "abyssworld:block/verdant_mana_bloom_side"
+  }
+}

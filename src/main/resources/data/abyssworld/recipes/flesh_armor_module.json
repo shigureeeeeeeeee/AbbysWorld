@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {"item": "abyssworld:abyss_armor_module_frame"},
+    {"item": "abyssworld:primordial_nerve_bundle"}
+  ],
+  "result": {"item": "abyssworld:flesh_armor_module"}
+}

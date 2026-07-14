@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=north": {
+      "model": "abyssworld:block/abyss_mana_reservoir"
+    },
+    "facing=east": {
+      "model": "abyssworld:block/abyss_mana_reservoir",
+      "y": 90
+    },
+    "facing=south": {
+      "model": "abyssworld:block/abyss_mana_reservoir",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "abyssworld:block/abyss_mana_reservoir",
+      "y": 270
+    }
+  }
+}

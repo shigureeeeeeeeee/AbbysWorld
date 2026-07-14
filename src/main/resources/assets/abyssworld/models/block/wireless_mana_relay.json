@@ -1,0 +1,9 @@
+{
+  "parent": "abyssworld:block/abyss_mana_condenser",
+  "textures": {
+    "side": "abyssworld:block/wireless_mana_relay_side",
+    "front": "abyssworld:block/wireless_mana_relay_front",
+    "top": "abyssworld:block/wireless_mana_relay_top",
+    "particle": "abyssworld:block/wireless_mana_relay_side"
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=north": {
+      "model": "abyssworld:block/inferno_mana_crucible"
+    },
+    "facing=east": {
+      "model": "abyssworld:block/inferno_mana_crucible",
+      "y": 90
+    },
+    "facing=south": {
+      "model": "abyssworld:block/inferno_mana_crucible",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "abyssworld:block/inferno_mana_crucible",
+      "y": 270
+    }
+  }
+}

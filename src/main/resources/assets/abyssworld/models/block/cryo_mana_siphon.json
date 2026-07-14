@@ -1,0 +1,9 @@
+{
+  "parent": "abyssworld:block/abyss_mana_condenser",
+  "textures": {
+    "side": "abyssworld:block/cryo_mana_siphon_side",
+    "front": "abyssworld:block/cryo_mana_siphon_front",
+    "top": "abyssworld:block/cryo_mana_siphon_top",
+    "particle": "abyssworld:block/cryo_mana_siphon_side"
+  }
+}

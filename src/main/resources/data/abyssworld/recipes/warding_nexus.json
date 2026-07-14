@@ -1,0 +1,25 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "FGF",
+    "PMP",
+    "FGF"
+  ],
+  "key": {
+    "F": {
+      "item": "abyssworld:glacial_plate"
+    },
+    "G": {
+      "item": "abyssworld:glyph_augment_area"
+    },
+    "P": {
+      "item": "abyssworld:verdant_fang"
+    },
+    "M": {
+      "item": "abyssworld:abyss_mana_pool"
+    }
+  },
+  "result": {
+    "item": "abyssworld:warding_nexus"
+  }
+}
