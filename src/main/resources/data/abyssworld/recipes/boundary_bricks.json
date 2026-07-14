@@ -1,0 +1,6 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": ["SS", "SS"],
+  "key": { "S": { "item": "abyssworld:boundary_stone" } },
+  "result": { "item": "abyssworld:boundary_bricks", "count": 4 }
+}

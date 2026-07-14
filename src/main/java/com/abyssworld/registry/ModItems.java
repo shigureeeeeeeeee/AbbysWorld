@@ -253,6 +253,18 @@ public class ModItems {
             "void_armor_module", AbyssArmorModuleItem.Type.VOID);
 
     // ---- スポーンエッグ ----
+    public static final RegistryObject<Item> ABYSS_HOUND_SPAWN_EGG =
+            spawnEgg("abyss_hound_spawn_egg", ModEntities.ABYSS_HOUND, 0x1A111B, 0xD92448);
+    public static final RegistryObject<Item> SHADOW_WALKER_SPAWN_EGG =
+            spawnEgg("shadow_walker_spawn_egg", ModEntities.SHADOW_WALKER, 0x11101E, 0x6336D8);
+    public static final RegistryObject<Item> MANA_LEECH_SPAWN_EGG =
+            spawnEgg("mana_leech_spawn_egg", ModEntities.MANA_LEECH, 0x281429, 0xF052C8);
+    public static final RegistryObject<Item> CRYSTAL_PARASITE_SPAWN_EGG =
+            spawnEgg("crystal_parasite_spawn_egg", ModEntities.CRYSTAL_PARASITE, 0x17252E, 0x50D8E8);
+    public static final RegistryObject<Item> FALLEN_RESEARCHER_SPAWN_EGG =
+            spawnEgg("fallen_researcher_spawn_egg", ModEntities.FALLEN_RESEARCHER, 0x21182B, 0xA85AE8);
+    public static final RegistryObject<Item> BOUNDARY_WATCHER_SPAWN_EGG =
+            spawnEgg("boundary_watcher_spawn_egg", ModEntities.BOUNDARY_WATCHER, 0x242026, 0xD1A34A);
     public static final RegistryObject<Item> ABYSS_SOVEREIGN_SPAWN_EGG =
             spawnEgg("abyss_sovereign_spawn_egg", ModEntities.ABYSS_SOVEREIGN, 0x24143C, 0xD6A2FF);
     public static final RegistryObject<Item> ROTTEN_FOREST_GUARDIAN_SPAWN_EGG =
@@ -403,6 +415,10 @@ public class ModItems {
                     new Item.Properties().rarity(Rarity.EPIC).fireResistant()));
 
     public static final RegistryObject<Item> ABYSS_STONE_ITEM = blockItem("abyss_stone", ModBlocks.ABYSS_STONE);
+    public static final RegistryObject<Item> BOUNDARY_SOIL_ITEM = blockItem("boundary_soil", ModBlocks.BOUNDARY_SOIL);
+    public static final RegistryObject<Item> BOUNDARY_STONE_ITEM = blockItem("boundary_stone", ModBlocks.BOUNDARY_STONE);
+    public static final RegistryObject<Item> BOUNDARY_BRICKS_ITEM = blockItem("boundary_bricks", ModBlocks.BOUNDARY_BRICKS);
+    public static final RegistryObject<Item> RIFT_CORE_ITEM = blockItem("rift_core", ModBlocks.RIFT_CORE);
     public static final RegistryObject<Item> FORGOTTEN_SOIL_ITEM = blockItem("forgotten_soil", ModBlocks.FORGOTTEN_SOIL);
     public static final RegistryObject<Item> FORGOTTEN_STONE_ITEM = blockItem("forgotten_stone", ModBlocks.FORGOTTEN_STONE);
     public static final RegistryObject<Item> GROVE_SEAL_ITEM = blockItem("grove_seal", ModBlocks.GROVE_SEAL);

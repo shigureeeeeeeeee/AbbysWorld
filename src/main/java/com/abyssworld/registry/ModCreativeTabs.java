@@ -132,6 +132,12 @@ public class ModCreativeTabs {
                         output.accept(ModItems.FROST_LANCE.get());
                         output.accept(ModItems.FLESH_SCYTHE.get());
                         output.accept(ModItems.VOID_EDGE.get());
+                        output.accept(ModItems.ABYSS_HOUND_SPAWN_EGG.get());
+                        output.accept(ModItems.SHADOW_WALKER_SPAWN_EGG.get());
+                        output.accept(ModItems.MANA_LEECH_SPAWN_EGG.get());
+                        output.accept(ModItems.CRYSTAL_PARASITE_SPAWN_EGG.get());
+                        output.accept(ModItems.FALLEN_RESEARCHER_SPAWN_EGG.get());
+                        output.accept(ModItems.BOUNDARY_WATCHER_SPAWN_EGG.get());
                         output.accept(ModItems.ROOTBOUND_THRALL_SPAWN_EGG.get());
                         output.accept(ModItems.CINDER_IMP_SPAWN_EGG.get());
                         output.accept(ModItems.GLACIAL_WRAITH_SPAWN_EGG.get());
@@ -152,6 +158,10 @@ public class ModCreativeTabs {
                         output.accept(ModItems.ABYSS_IRON_ORE_ITEM.get());
                         output.accept(ModItems.ABYSS_CRYSTAL_ORE_ITEM.get());
                         output.accept(ModItems.ABYSS_STONE_ITEM.get());
+                        output.accept(ModItems.BOUNDARY_SOIL_ITEM.get());
+                        output.accept(ModItems.BOUNDARY_STONE_ITEM.get());
+                        output.accept(ModItems.BOUNDARY_BRICKS_ITEM.get());
+                        output.accept(ModItems.RIFT_CORE_ITEM.get());
                         output.accept(ModItems.FORGOTTEN_SOIL_ITEM.get());
                         output.accept(ModItems.FORGOTTEN_STONE_ITEM.get());
                         output.accept(ModItems.GROVE_SEAL_ITEM.get());

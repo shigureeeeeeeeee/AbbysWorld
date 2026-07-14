@@ -1,0 +1,12 @@
+{
+  "placement": {
+    "type": "minecraft:random_spread",
+    "salt": 19740714,
+    "separation": 28,
+    "spacing": 72,
+    "spread_type": "triangular"
+  },
+  "structures": [
+    { "structure": "abyssworld:riftfall_citadel", "weight": 1 }
+  ]
+}

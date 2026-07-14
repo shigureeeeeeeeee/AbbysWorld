@@ -1,0 +1,7 @@
+{
+  "type": "abyssworld:infested_vein_dungeon",
+  "biomes": "#abyssworld:has_structure/infested_vein_dungeon",
+  "spawn_overrides": {},
+  "step": "underground_structures",
+  "terrain_adaptation": "bury"
+}

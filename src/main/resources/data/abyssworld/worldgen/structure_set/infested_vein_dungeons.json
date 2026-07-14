@@ -1,0 +1,12 @@
+{
+  "placement": {
+    "type": "minecraft:random_spread",
+    "salt": 19740629,
+    "separation": 12,
+    "spacing": 30,
+    "spread_type": "linear"
+  },
+  "structures": [
+    { "structure": "abyssworld:infested_vein_dungeon", "weight": 1 }
+  ]
+}

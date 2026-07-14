@@ -231,6 +231,19 @@ public class ModBlocks {
     // ---- 深淵地形ブロック ----
     public static final RegistryObject<Block> ABYSS_STONE = BLOCKS.register("abyss_stone",
             () -> terrainBlock(MapColor.COLOR_PURPLE, 3.5F, SoundType.DEEPSLATE));
+    public static final RegistryObject<Block> BOUNDARY_SOIL = BLOCKS.register("boundary_soil",
+            () -> terrainBlock(MapColor.COLOR_BLACK, 1.6F, SoundType.ROOTED_DIRT));
+    public static final RegistryObject<Block> BOUNDARY_STONE = BLOCKS.register("boundary_stone",
+            () -> terrainBlock(MapColor.COLOR_BLACK, 4.2F, SoundType.DEEPSLATE));
+    public static final RegistryObject<Block> BOUNDARY_BRICKS = BLOCKS.register("boundary_bricks",
+            () -> terrainBlock(MapColor.TERRACOTTA_PURPLE, 5.0F, SoundType.DEEPSLATE_BRICKS));
+    public static final RegistryObject<Block> RIFT_CORE = BLOCKS.register("rift_core",
+            () -> new Block(BlockBehaviour.Properties.of()
+                    .mapColor(MapColor.COLOR_PURPLE)
+                    .strength(6.0F, 18.0F)
+                    .requiresCorrectToolForDrops()
+                    .lightLevel(state -> 12)
+                    .sound(SoundType.AMETHYST)));
     public static final RegistryObject<Block> FORGOTTEN_SOIL = BLOCKS.register("forgotten_soil",
             () -> terrainBlock(MapColor.PLANT, 1.2F, SoundType.ROOTED_DIRT));
     public static final RegistryObject<Block> FORGOTTEN_STONE = BLOCKS.register("forgotten_stone",

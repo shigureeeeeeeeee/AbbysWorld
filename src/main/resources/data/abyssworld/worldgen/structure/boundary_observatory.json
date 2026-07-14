@@ -1,0 +1,7 @@
+{
+  "type": "abyssworld:boundary_observatory",
+  "biomes": "#abyssworld:has_structure/boundary_observatory",
+  "spawn_overrides": {},
+  "step": "surface_structures",
+  "terrain_adaptation": "beard_thin"
+}

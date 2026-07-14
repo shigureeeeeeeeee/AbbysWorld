@@ -1,0 +1,7 @@
+{
+  "type": "abyssworld:riftfall_citadel",
+  "biomes": "#abyssworld:has_structure/riftfall_citadel",
+  "spawn_overrides": {},
+  "step": "surface_structures",
+  "terrain_adaptation": "beard_box"
+}

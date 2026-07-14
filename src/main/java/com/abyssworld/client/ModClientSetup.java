@@ -3,8 +3,12 @@ package com.abyssworld.client;
 import com.abyssworld.AbyssWorld;
 import com.abyssworld.client.model.AbyssModelLayers;
 import com.abyssworld.client.model.AbyssArmorModel;
+import com.abyssworld.client.model.AbyssHoundModel;
 import com.abyssworld.client.model.AbyssMonsterModel;
+import com.abyssworld.client.model.AdvancedOverworldModels;
 import com.abyssworld.client.renderer.AbyssEntityRenderers;
+import com.abyssworld.client.renderer.AbyssHoundRenderer;
+import com.abyssworld.client.renderer.AdvancedOverworldRenderers;
 import com.abyssworld.client.screen.AbyssResourceHarvesterScreen;
 import com.abyssworld.client.screen.AbyssManaMachineScreen;
 import com.abyssworld.client.screen.AbyssStorageTerminalScreen;
@@ -35,6 +39,17 @@ public class ModClientSetup {
 
     @SubscribeEvent
     public static void registerRenderers(EntityRenderersEvent.RegisterRenderers event) {
+        event.registerEntityRenderer(ModEntities.ABYSS_HOUND.get(), AbyssHoundRenderer::new);
+        event.registerEntityRenderer(ModEntities.SHADOW_WALKER.get(),
+                AdvancedOverworldRenderers.ShadowWalkerRenderer::new);
+        event.registerEntityRenderer(ModEntities.MANA_LEECH.get(),
+                AdvancedOverworldRenderers.ManaLeechRenderer::new);
+        event.registerEntityRenderer(ModEntities.CRYSTAL_PARASITE.get(),
+                AdvancedOverworldRenderers.CrystalParasiteRenderer::new);
+        event.registerEntityRenderer(ModEntities.FALLEN_RESEARCHER.get(),
+                AdvancedOverworldRenderers.FallenResearcherRenderer::new);
+        event.registerEntityRenderer(ModEntities.BOUNDARY_WATCHER.get(),
+                AdvancedOverworldRenderers.BoundaryWatcherRenderer::new);
         event.registerEntityRenderer(ModEntities.ABYSS_SOVEREIGN.get(),
                 context -> new AbyssEntityRenderers.AbyssMonster<>(context, texture("abyss_sovereign"),
                         AbyssModelLayers.ABYSS_SOVEREIGN, 1.05F));
@@ -94,6 +109,17 @@ public class ModClientSetup {
                 AbyssArmorModel::crystallineLayer);
         event.registerLayerDefinition(AbyssModelLayers.SINGULARITY_ABYSS_ARMOR,
                 AbyssArmorModel::singularityLayer);
+        event.registerLayerDefinition(AbyssModelLayers.ABYSS_HOUND, AbyssHoundModel::createBodyLayer);
+        event.registerLayerDefinition(AbyssModelLayers.SHADOW_WALKER,
+                AdvancedOverworldModels.ShadowWalkerModel::createBodyLayer);
+        event.registerLayerDefinition(AbyssModelLayers.MANA_LEECH,
+                AdvancedOverworldModels.ManaLeechModel::createBodyLayer);
+        event.registerLayerDefinition(AbyssModelLayers.CRYSTAL_PARASITE,
+                AdvancedOverworldModels.CrystalParasiteModel::createBodyLayer);
+        event.registerLayerDefinition(AbyssModelLayers.FALLEN_RESEARCHER,
+                AdvancedOverworldModels.FallenResearcherModel::createBodyLayer);
+        event.registerLayerDefinition(AbyssModelLayers.BOUNDARY_WATCHER,
+                AdvancedOverworldModels.BoundaryWatcherModel::createBodyLayer);
         event.registerLayerDefinition(AbyssModelLayers.ABYSS_SOVEREIGN, AbyssMonsterModel::abyssSovereignLayer);
         event.registerLayerDefinition(AbyssModelLayers.ROTTEN_FOREST_GUARDIAN,
                 AbyssMonsterModel::rottenForestGuardianLayer);

@@ -2,6 +2,7 @@ package com.abyssworld.registry;
 
 import com.abyssworld.AbyssWorld;
 import com.abyssworld.worldgen.LayerAltarFeature;
+import com.abyssworld.worldgen.BoundaryScarFeature;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.levelgen.feature.Feature;
 import net.minecraft.world.level.levelgen.feature.configurations.NoneFeatureConfiguration;
@@ -47,4 +48,8 @@ public class ModFeatures {
                             ModBlocks.VOID_CITY_ALTAR,
                             Blocks.END_STONE_BRICKS.defaultBlockState(),
                             Blocks.PURPUR_BLOCK.defaultBlockState()));
+
+    public static final RegistryObject<Feature<NoneFeatureConfiguration>> BOUNDARY_SCAR_DECORATION =
+            FEATURES.register("boundary_scar_decoration",
+                    () -> new BoundaryScarFeature(NoneFeatureConfiguration.CODEC));
 }

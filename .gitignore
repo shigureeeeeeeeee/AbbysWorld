@@ -20,6 +20,8 @@ build
 # other
 eclipse
 run
+__pycache__/
+*.py[cod]
 
 # Files from Forge MDK
 forge*changelog.txt

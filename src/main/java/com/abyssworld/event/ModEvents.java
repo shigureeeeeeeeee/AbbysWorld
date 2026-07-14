@@ -18,6 +18,13 @@ import com.abyssworld.entity.RottenForestGuardianEntity;
 import com.abyssworld.entity.VoidArchonEntity;
 import com.abyssworld.entity.VoidReaperEntity;
 import com.abyssworld.entity.VoidShadeEntity;
+import com.abyssworld.entity.AbyssHoundEntity;
+import com.abyssworld.entity.ShadowWalkerEntity;
+import com.abyssworld.entity.ManaLeechEntity;
+import com.abyssworld.entity.CrystalParasiteEntity;
+import com.abyssworld.entity.FallenResearcherEntity;
+import com.abyssworld.entity.BoundaryWatcherEntity;
+import com.abyssworld.entity.OverworldAbyssSpawnRules;
 import com.abyssworld.registry.ModEntities;
 import net.minecraft.world.entity.SpawnPlacements;
 import net.minecraft.world.entity.monster.Monster;
@@ -31,6 +38,12 @@ import net.minecraftforge.fml.common.Mod;
 public class ModEvents {
     @SubscribeEvent
     public static void registerAttributes(EntityAttributeCreationEvent event) {
+        event.put(ModEntities.ABYSS_HOUND.get(), AbyssHoundEntity.createAttributes().build());
+        event.put(ModEntities.SHADOW_WALKER.get(), ShadowWalkerEntity.createAttributes().build());
+        event.put(ModEntities.MANA_LEECH.get(), ManaLeechEntity.createAttributes().build());
+        event.put(ModEntities.CRYSTAL_PARASITE.get(), CrystalParasiteEntity.createAttributes().build());
+        event.put(ModEntities.FALLEN_RESEARCHER.get(), FallenResearcherEntity.createAttributes().build());
+        event.put(ModEntities.BOUNDARY_WATCHER.get(), BoundaryWatcherEntity.createAttributes().build());
         event.put(ModEntities.ABYSS_SOVEREIGN.get(), AbyssSovereignEntity.createAttributes().build());
         event.put(ModEntities.ROTTEN_FOREST_GUARDIAN.get(), RottenForestGuardianEntity.createAttributes().build());
         event.put(ModEntities.GROVE_SENTINEL.get(), GroveSentinelEntity.createAttributes().build());
@@ -52,6 +65,24 @@ public class ModEvents {
 
     @SubscribeEvent
     public static void registerSpawnPlacements(SpawnPlacementRegisterEvent event) {
+        event.register(ModEntities.ABYSS_HOUND.get(), SpawnPlacements.Type.ON_GROUND,
+                Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, OverworldAbyssSpawnRules::surface,
+                SpawnPlacementRegisterEvent.Operation.REPLACE);
+        event.register(ModEntities.SHADOW_WALKER.get(), SpawnPlacements.Type.ON_GROUND,
+                Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, OverworldAbyssSpawnRules::anyDepth,
+                SpawnPlacementRegisterEvent.Operation.REPLACE);
+        event.register(ModEntities.MANA_LEECH.get(), SpawnPlacements.Type.ON_GROUND,
+                Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, OverworldAbyssSpawnRules::underground,
+                SpawnPlacementRegisterEvent.Operation.REPLACE);
+        event.register(ModEntities.CRYSTAL_PARASITE.get(), SpawnPlacements.Type.ON_GROUND,
+                Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, OverworldAbyssSpawnRules::deep,
+                SpawnPlacementRegisterEvent.Operation.REPLACE);
+        event.register(ModEntities.FALLEN_RESEARCHER.get(), SpawnPlacements.Type.ON_GROUND,
+                Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, OverworldAbyssSpawnRules::underground,
+                SpawnPlacementRegisterEvent.Operation.REPLACE);
+        event.register(ModEntities.BOUNDARY_WATCHER.get(), SpawnPlacements.Type.ON_GROUND,
+                Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, OverworldAbyssSpawnRules::watcher,
+                SpawnPlacementRegisterEvent.Operation.REPLACE);
         event.register(ModEntities.FOREST_STALKER.get(), SpawnPlacements.Type.ON_GROUND,
                 Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, Monster::checkMonsterSpawnRules,
                 SpawnPlacementRegisterEvent.Operation.REPLACE);

@@ -1,0 +1,19 @@
+{
+  "parent": "abyssworld:story/root",
+  "display": {
+    "icon": { "item": "abyssworld:rift_core" },
+    "title": { "translate": "advancements.abyssworld.boundary_scar.title" },
+    "description": { "translate": "advancements.abyssworld.boundary_scar.description" },
+    "frame": "challenge",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "enter_boundary_scar": {
+      "trigger": "minecraft:location",
+      "conditions": { "player": { "location": { "biome": "abyssworld:boundary_scar" } } }
+    }
+  },
+  "rewards": { "experience": 100 }
+}

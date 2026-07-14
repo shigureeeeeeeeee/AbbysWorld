@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:chest",
+  "pools": [
+    {
+      "rolls": { "type": "minecraft:uniform", "min": 3, "max": 6 },
+      "entries": [
+        { "type": "minecraft:item", "name": "abyssworld:abyss_crystal", "weight": 8,
+          "functions": [{ "function": "minecraft:set_count", "count": { "type": "minecraft:uniform", "min": 2, "max": 7 } }] },
+        { "type": "minecraft:item", "name": "abyssworld:compressed_abyss_iron", "weight": 6,
+          "functions": [{ "function": "minecraft:set_count", "count": { "type": "minecraft:uniform", "min": 1, "max": 4 } }] },
+        { "type": "minecraft:item", "name": "abyssworld:glyph_effect_pull", "weight": 3 },
+        { "type": "minecraft:item", "name": "abyssworld:glyph_augment_range", "weight": 3 },
+        { "type": "minecraft:item", "name": "minecraft:ender_pearl", "weight": 5,
+          "functions": [{ "function": "minecraft:set_count", "count": { "type": "minecraft:uniform", "min": 1, "max": 5 } }] },
+        { "type": "minecraft:item", "name": "minecraft:experience_bottle", "weight": 4,
+          "functions": [{ "function": "minecraft:set_count", "count": { "type": "minecraft:uniform", "min": 3, "max": 10 } }] }
+      ]
+    }
+  ],
+  "random_sequence": "abyssworld:chests/boundary_observatory"
+}

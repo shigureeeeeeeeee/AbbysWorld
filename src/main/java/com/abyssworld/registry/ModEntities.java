@@ -18,6 +18,12 @@ import com.abyssworld.entity.RottenForestGuardianEntity;
 import com.abyssworld.entity.VoidArchonEntity;
 import com.abyssworld.entity.VoidReaperEntity;
 import com.abyssworld.entity.VoidShadeEntity;
+import com.abyssworld.entity.AbyssHoundEntity;
+import com.abyssworld.entity.ShadowWalkerEntity;
+import com.abyssworld.entity.ManaLeechEntity;
+import com.abyssworld.entity.CrystalParasiteEntity;
+import com.abyssworld.entity.FallenResearcherEntity;
+import com.abyssworld.entity.BoundaryWatcherEntity;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.MobCategory;
 import net.minecraftforge.registries.DeferredRegister;
@@ -27,6 +33,48 @@ import net.minecraftforge.registries.RegistryObject;
 public class ModEntities {
     public static final DeferredRegister<EntityType<?>> ENTITIES =
             DeferredRegister.create(ForgeRegistries.ENTITY_TYPES, AbyssWorld.MODID);
+
+    public static final RegistryObject<EntityType<AbyssHoundEntity>> ABYSS_HOUND =
+            ENTITIES.register("abyss_hound",
+                    () -> EntityType.Builder.of(AbyssHoundEntity::new, MobCategory.MONSTER)
+                            .sized(1.15F, 1.25F)
+                            .clientTrackingRange(8)
+                            .build("abyss_hound"));
+
+    public static final RegistryObject<EntityType<ShadowWalkerEntity>> SHADOW_WALKER =
+            ENTITIES.register("shadow_walker",
+                    () -> EntityType.Builder.of(ShadowWalkerEntity::new, MobCategory.MONSTER)
+                            .sized(0.7F, 2.75F)
+                            .clientTrackingRange(10)
+                            .build("shadow_walker"));
+
+    public static final RegistryObject<EntityType<ManaLeechEntity>> MANA_LEECH =
+            ENTITIES.register("mana_leech",
+                    () -> EntityType.Builder.of(ManaLeechEntity::new, MobCategory.MONSTER)
+                            .sized(0.65F, 0.9F)
+                            .clientTrackingRange(8)
+                            .build("mana_leech"));
+
+    public static final RegistryObject<EntityType<CrystalParasiteEntity>> CRYSTAL_PARASITE =
+            ENTITIES.register("crystal_parasite",
+                    () -> EntityType.Builder.of(CrystalParasiteEntity::new, MobCategory.MONSTER)
+                            .sized(1.2F, 1.35F)
+                            .clientTrackingRange(10)
+                            .build("crystal_parasite"));
+
+    public static final RegistryObject<EntityType<FallenResearcherEntity>> FALLEN_RESEARCHER =
+            ENTITIES.register("fallen_researcher",
+                    () -> EntityType.Builder.of(FallenResearcherEntity::new, MobCategory.MONSTER)
+                            .sized(0.7F, 2.35F)
+                            .clientTrackingRange(10)
+                            .build("fallen_researcher"));
+
+    public static final RegistryObject<EntityType<BoundaryWatcherEntity>> BOUNDARY_WATCHER =
+            ENTITIES.register("boundary_watcher",
+                    () -> EntityType.Builder.of(BoundaryWatcherEntity::new, MobCategory.MONSTER)
+                            .sized(1.35F, 3.4F)
+                            .clientTrackingRange(12)
+                            .build("boundary_watcher"));
 
     public static final RegistryObject<EntityType<AbyssSovereignEntity>> ABYSS_SOVEREIGN =
             ENTITIES.register("abyss_sovereign",

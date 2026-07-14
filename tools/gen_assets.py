@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 """abyssworld のアイテム・ブロック・エンティティ用アセットを生成する。"""
 import json
+import math
 import os
 import random
 import struct
@@ -260,6 +261,334 @@ def entity_texture(width, height, base, accent, seed):
     return px
 
 
+def abyss_hound_texture(glow=False):
+    """深淵猟犬専用256x128 UV。黒い甲殻、血肉、骨、発光亀裂を別レイヤー化する。"""
+    width, height = 256, 128
+    transparent = (0, 0, 0, 0)
+    px = [[transparent for _ in range(width)] for _ in range(height)]
+    rng = random.Random("abyss_hound_production")
+
+    if not glow:
+        chitin = (28, 22, 30)
+        tissue = (92, 24, 40)
+        for y in range(height):
+            for x in range(128):
+                plate = ((x // 7) + (y // 6)) % 3
+                edge = -0.20 if x % 16 in (0, 15) or y % 16 in (0, 15) else 0.0
+                grain = rng.uniform(-0.11, 0.11)
+                px[y][x] = shade(chitin, 0.86 + plate * 0.075 + edge + grain)
+
+        # Exposed sinew seams under the armour plates.
+        for y in range(30, 84):
+            for x in range(0, 112):
+                if (x + y * 2) % 19 in (0, 1) or (x * 2 - y) % 31 == 0:
+                    px[y][x] = shade(tissue, 0.8 + rng.random() * 0.35)
+
+        # Bone regions: horns, jaw teeth, claws, dorsal spines and tail blade.
+        bone_regions = (
+            (96, 0, 124, 20), (68, 8, 94, 15),
+            (34, 86, 59, 99), (98, 86, 124, 100),
+            (66, 103, 116, 118),
+        )
+        for x0, y0, x1, y1 in bone_regions:
+            for y in range(y0, y1):
+                for x in range(x0, x1):
+                    fracture = 0.58 if (x * 3 + y * 5) % 23 == 0 else 0.0
+                    px[y][x] = shade((178, 157, 136), 0.82 + rng.random() * 0.24 - fracture)
+
+        # Chipped highlights give the broad armour plates readable edges at game scale.
+        for x0, y0, x1, y1 in ((0, 32, 50, 57), (52, 32, 96, 65), (0, 64, 44, 82)):
+            for x in range(x0 + 2, x1 - 2):
+                if (x + y0) % 3:
+                    px[y0 + 1][x] = shade((62, 48, 65), 1.0)
+
+    # These atlas islands belong only to the raised eye/fissure geometry.
+    glow_regions = ((224, 0, 229, 4), (224, 8, 237, 16), (224, 20, 236, 27))
+    for x0, y0, x1, y1 in glow_regions:
+        for y in range(y0, y1):
+            for x in range(x0, x1):
+                rim = x in (x0, x1 - 1) or y in (y0, y1 - 1)
+                if glow:
+                    px[y][x] = (255, 36, 54, 210 if rim else 255)
+                else:
+                    px[y][x] = (166, 18, 38, 255) if rim else (255, 58, 72, 255)
+        if not glow:
+            px[(y0 + y1) // 2][(x0 + x1) // 2] = (255, 205, 196, 255)
+
+    return px
+
+
+def shadow_walker_texture(glow=False):
+    """縦に崩れる虚無布。規則的な装甲線を使わない。"""
+    px = [[(0, 0, 0, 0) for _ in range(256)] for _ in range(128)]
+    rng = random.Random("shadow_walker_void_cloth")
+    if not glow:
+        for y in range(128):
+            for x in range(160):
+                band = (x // 5) % 7
+                fade = 0.72 + band * 0.035 + rng.uniform(-0.08, 0.08)
+                if (x * 5 + y * 3) % 47 < 3:
+                    fade -= 0.28
+                px[y][x] = shade((21, 18, 35), fade)
+
+        # 影が下へほどける縦裂けと、輪郭を失う市松状の欠落。
+        for start_x in (9, 27, 54, 83, 118, 145):
+            x = start_x
+            for y in range(4, 124):
+                if y % 9 == 0:
+                    x += rng.choice((-1, 0, 1))
+                if 1 <= x < 158 and rng.random() > 0.13:
+                    px[y][x] = shade((96, 48, 190), 0.55 + rng.random() * 0.45)
+                    if y % 5 == 0 and x + 1 < 160:
+                        px[y][x + 1] = shade((48, 30, 82), 0.9)
+        for y in range(72, 128):
+            for x in range(160):
+                cell = (x // 4 + y // 5) % 2
+                threshold = 0.06 + (y - 72) / 150.0
+                if cell and rng.random() < threshold:
+                    px[y][x] = shade((6, 5, 13), 0.75)
+
+    # 細い顔裂けと肋骨状の断片。発光マップ側も縦方向のリズムだけを持つ。
+    for y in range(0, 7):
+        for x in range(224, 229):
+            if abs(x - 226) <= (1 if y in (2, 3, 4) else 0):
+                px[y][x] = (202, 118, 255, 255) if glow else (126, 52, 220, 255)
+    for y in range(8, 20):
+        span = 2 + (y % 3)
+        for x in range(224, 224 + span):
+            if (x + y) % 2 == 0:
+                px[y][x] = (170, 74, 255, 235) if glow else (91, 38, 174, 255)
+    return px
+
+
+def mana_leech_texture(glow=False):
+    """濡れた節殻、膜、脈、膨張する魔力嚢からなる生体表皮。"""
+    px = [[(0, 0, 0, 0) for _ in range(256)] for _ in range(128)]
+    rng = random.Random("mana_leech_living_membrane")
+    if not glow:
+        for y in range(128):
+            for x in range(160):
+                dx, dy = x - 76, (y - 62) * 1.35
+                ring = int(math.sqrt(dx * dx + dy * dy))
+                shell = 0.70 + (ring % 12) / 34.0
+                pores = -0.25 if (x * 7 + y * 11) % 53 < 4 else 0.0
+                px[y][x] = shade((66, 25, 60), shell + pores + rng.uniform(-0.05, 0.05))
+
+        # 曲線状の腹節。直線グリッドではなく同心弧で体の伸縮を表現する。
+        for radius in (17, 29, 43, 58, 74, 91):
+            for y in range(2, 126):
+                for x in range(2, 158):
+                    d = math.sqrt((x - 76) ** 2 + ((y - 61) * 1.35) ** 2)
+                    if abs(d - radius) < 0.65:
+                        px[y][x] = shade((145, 48, 101), 0.9 + rng.random() * 0.25)
+        # 半透明膜の穴と、嚢へ集まる枝分かれした血管。
+        for cy, cx in ((22, 24), (38, 116), (82, 36), (101, 126)):
+            for y in range(max(0, cy - 8), min(128, cy + 9)):
+                for x in range(max(0, cx - 12), min(160, cx + 13)):
+                    oval = ((x - cx) / 12) ** 2 + ((y - cy) / 8) ** 2
+                    if oval < 1:
+                        px[y][x] = shade((95, 34, 83), 0.82 + (1 - oval) * 0.35)
+        for root in (18, 49, 105, 138):
+            for y in range(10, 118):
+                x = root + int(5 * math.sin((y + root) / 9.0))
+                if 1 <= x < 159:
+                    px[y][x] = shade((202, 56, 145), 0.75 + (y % 7) * 0.035)
+
+    # 花弁状の口先と丸い魔力嚢。中心ほど白熱する。
+    for y in range(0, 7):
+        for x in range(224, 238):
+            petal = ((x - 230) + (y - 3) * 2) % 6
+            if petal in (0, 1, 2):
+                px[y][x] = (255, 90, 220, 240) if glow else (196, 43, 144, 255)
+    for y in range(8, 20):
+        for x in range(224, 244):
+            d = ((x - 233.5) / 9.5) ** 2 + ((y - 13.5) / 5.5) ** 2
+            if d <= 1:
+                if glow:
+                    px[y][x] = (255, clamp(118 + (1 - d) * 100), 230, 255)
+                else:
+                    px[y][x] = shade((236, 61, 181), 0.72 + (1 - d) * 0.45)
+    return px
+
+
+def crystal_parasite_texture(glow=False):
+    """斜めに割れた頁岩と、内側から覗くシアンの晶洞。"""
+    px = [[(0, 0, 0, 0) for _ in range(256)] for _ in range(128)]
+    rng = random.Random("crystal_parasite_slate_geode")
+    if not glow:
+        for y in range(128):
+            for x in range(160):
+                stratum = ((x + y * 2) // 9) % 5
+                facet = ((x - y) // 13) % 3
+                px[y][x] = shade((37, 55, 61), 0.68 + stratum * 0.07 + facet * 0.045
+                                                 + rng.uniform(-0.07, 0.07))
+
+        # 斜めの層理面と三角形の欠け。生物系の曲線は使わない。
+        for offset in (-92, -58, -21, 17, 54, 91, 128):
+            for y in range(128):
+                x = offset + y
+                for dx in (0, 1):
+                    if 0 <= x + dx < 160:
+                        px[y][x + dx] = shade((79, 112, 118), 0.8 + rng.random() * 0.2)
+        for apex_x, apex_y, size in ((25, 19, 13), (92, 33, 18), (46, 91, 21), (132, 78, 15)):
+            for yy in range(size):
+                width = max(1, size - yy)
+                for xx in range(-width, width + 1):
+                    x, y = apex_x + xx, apex_y + yy
+                    if 0 <= x < 160 and 0 <= y < 128 and (xx + yy) % 4 != 0:
+                        px[y][x] = shade((56, 89, 96), 0.82 + yy / max(1, size) * 0.22)
+        # 晶洞へ向かう枝分かれ亀裂。
+        for start_x in (16, 71, 113, 148):
+            x = start_x
+            for y in range(5, 123):
+                if y % 6 == 0:
+                    x += rng.choice((-2, -1, 1, 2))
+                if 1 <= x < 159:
+                    px[y][x] = shade((62, 197, 211), 0.55 + (y % 5) * 0.08)
+                    if y % 17 == 0 and x + 1 < 160:
+                        px[y][x + 1] = shade((125, 232, 238), 0.75)
+
+    # 中央開口だけを硬質な菱形ファセットとして発光させる。
+    for y in range(0, 9):
+        for x in range(224, 241):
+            d = abs(x - 232) / 8 + abs(y - 4) / 4
+            if d <= 1:
+                if glow:
+                    edge = d > 0.68
+                    px[y][x] = (97 if edge else 220, 236 if edge else 255, 255, 255)
+                else:
+                    px[y][x] = shade((75, 216, 231), 0.75 + (1 - d) * 0.55)
+    return px
+
+
+def fallen_researcher_texture(glow=False):
+    """縫い直された煤布、革、羊皮紙、真鍮、薬液染みの混成装束。"""
+    px = [[(0, 0, 0, 0) for _ in range(256)] for _ in range(128)]
+    rng = random.Random("fallen_researcher_stitched_archive")
+    if not glow:
+        for y in range(128):
+            for x in range(160):
+                weave = 0.07 if (x + y) % 4 == 0 else -0.03 if (x - y) % 5 == 0 else 0
+                px[y][x] = shade((39, 32, 37), 0.79 + weave + rng.uniform(-0.055, 0.055))
+
+        # 不揃いな革・羊皮紙の継ぎ当て。各パッチは縫い方向も材質も異なる。
+        patches = (
+            (7, 8, 47, 34, (91, 64, 42)), (57, 4, 112, 28, (126, 101, 64)),
+            (19, 50, 69, 82, (68, 49, 39)), (88, 43, 151, 76, (111, 87, 58)),
+            (4, 91, 54, 122, (82, 59, 45)), (69, 88, 132, 119, (128, 104, 70)),
+        )
+        for index, (x0, y0, x1, y1, color) in enumerate(patches):
+            for y in range(y0, y1):
+                for x in range(x0, x1):
+                    grain = 0.16 if (x * (index + 2) + y) % 17 == 0 else 0
+                    px[y][x] = shade(color, 0.74 + grain + rng.uniform(-0.08, 0.08))
+            # 大きな連続線でなく、一針ごとに切れた縫い目。
+            for x in range(x0 + 2, x1 - 1, 4):
+                px[y0][x] = shade((164, 119, 66), 0.95)
+                px[y1 - 1][x] = shade((164, 119, 66), 0.78)
+            for y in range(y0 + 2, y1 - 1, 4):
+                px[y][x0] = shade((164, 119, 66), 0.9)
+                px[y][x1 - 1] = shade((164, 119, 66), 0.78)
+        # 真鍮鋲と、失敗した薬液の不定形な染み。
+        for x, y in ((11, 11), (43, 31), (61, 7), (108, 25), (91, 47), (145, 72), (73, 91), (127, 116)):
+            px[y][x] = (190, 139, 58, 255)
+            if x + 1 < 160:
+                px[y][x + 1] = (92, 65, 31, 255)
+        for cx, cy, radius in ((38, 65, 9), (105, 99, 12), (139, 38, 6)):
+            for y in range(max(0, cy - radius), min(128, cy + radius + 1)):
+                for x in range(max(0, cx - radius), min(160, cx + radius + 1)):
+                    d = math.sqrt((x - cx) ** 2 + (y - cy) ** 2)
+                    wobble = ((x * 7 + y * 3) % 9) / 5
+                    if d < radius - wobble:
+                        px[y][x] = shade((91, 43, 104), 0.67 + rng.random() * 0.24)
+
+    # 三眼レンズ、魔導書の印、結晶化した指先を別々の図形として描く。
+    for center_x in (226, 232, 238):
+        for y in range(0, 7):
+            for x in range(center_x - 2, center_x + 3):
+                d = abs(x - center_x) + abs(y - 3)
+                if d <= 2:
+                    px[y][x] = (222, 130, 255, 255) if glow else (127, 58, 164, 255)
+    for y in range(10, 18):
+        for x in range(224, 238):
+            if x in (230, 231) or y in (13, 14) or (x + y) % 9 == 0:
+                px[y][x] = (188, 86, 255, 245) if glow else (108, 46, 154, 255)
+    for y in range(20, 32):
+        for x in range(224, 244):
+            if (x - 224) % 6 <= 2 and y >= 20 + abs((x - 225) % 6 - 1):
+                px[y][x] = (213, 105, 255, 235) if glow else (119, 53, 166, 255)
+    return px
+
+
+def boundary_watcher_texture(glow=False):
+    """巨石板、古金の象嵌、宇宙幾何、境界亀裂からなる儀礼装甲。"""
+    px = [[(0, 0, 0, 0) for _ in range(256)] for _ in range(128)]
+    rng = random.Random("boundary_watcher_cosmic_monument")
+    if not glow:
+        for y in range(128):
+            for x in range(160):
+                slab = ((x // 32) + (y // 40) * 2) % 4
+                mineral = rng.uniform(-0.07, 0.07)
+                px[y][x] = shade((39, 38, 43), 0.68 + slab * 0.055 + mineral)
+
+        gold = (157, 116, 48)
+        dark_gold = (91, 65, 30)
+        # 中央軸と左右対称の象嵌。小さな反復格子でなく、巨像全体を貫く構図。
+        for y in range(4, 124):
+            for x in (78, 79, 80, 81):
+                px[y][x] = shade(gold, 1.08 if x in (79, 80) else 0.72)
+            arm = 8 + (y // 16) * 3
+            if y % 16 in (0, 1):
+                for x in range(max(2, 80 - arm), min(158, 81 + arm)):
+                    px[y][x] = shade(gold, 0.86 if x % 5 else 1.15)
+        for cx, cy, radius in ((80, 31, 20), (80, 91, 27)):
+            for y in range(max(0, cy - radius - 1), min(128, cy + radius + 2)):
+                for x in range(max(0, cx - radius - 1), min(160, cx + radius + 2)):
+                    d = math.sqrt((x - cx) ** 2 + ((y - cy) * 1.35) ** 2)
+                    if abs(d - radius) < 0.8:
+                        px[y][x] = shade(gold, 0.9 + (x % 3) * 0.08)
+                    elif abs(d - radius * 0.55) < 0.65:
+                        px[y][x] = shade(dark_gold, 1.0)
+        # 石板の割れ目は象嵌を横切る紫の境界破断として限定する。
+        for start_x, direction in ((18, 1), (142, -1), (55, 1), (108, -1)):
+            x = start_x
+            for y in range(10, 124):
+                if y % 11 == 0:
+                    x += direction * rng.choice((1, 2, 3))
+                if 0 <= x < 160 and y % 3 != 0:
+                    px[y][x] = shade((110, 47, 177), 0.72 + (y % 7) * 0.04)
+
+    # 顔の縦裂け、胸の境界核、浮遊碑の小紋章。
+    for y in range(0, 9):
+        for x in range(224, 231):
+            width = 0 if y in (0, 8) else 1 if y in (1, 2, 6, 7) else 2
+            if abs(x - 227) <= width:
+                px[y][x] = (210, 119, 255, 255) if glow else (124, 55, 183, 255)
+    for y in range(8, 20):
+        for x in range(224, 244):
+            d = abs(x - 233.5) / 9.5 + abs(y - 13.5) / 5.5
+            ring = 0.48 <= d <= 0.78
+            axis = x in (233, 234) or y in (13, 14)
+            if d <= 1 and (ring or axis):
+                px[y][x] = (231, 158, 255, 255) if glow else (137, 65, 190, 255)
+    for y in range(20, 32):
+        for x in range(224, 250):
+            rune = (x - 224) % 7 in (0, 1) and y % 4 != 0
+            cap = y in (21, 29) and (x - 224) % 7 < 5
+            if rune or cap:
+                px[y][x] = (197, 115, 255, 225) if glow else (119, 59, 174, 255)
+    return px
+
+
+OVERWORLD_MOB_TEXTURES = {
+    "shadow_walker": shadow_walker_texture,
+    "mana_leech": mana_leech_texture,
+    "crystal_parasite": crystal_parasite_texture,
+    "fallen_researcher": fallen_researcher_texture,
+    "boundary_watcher": boundary_watcher_texture,
+}
+
+
 ITEM_TEXTURES = {
     # 基礎素材
     "raw_abyss_iron": (blob_texture, (86, 70, 110)),
@@ -367,6 +696,10 @@ BLOCK_TEXTURES = {
     "abyss_iron_block": ((110, 85, 160), None),
     "world_reconstruction_furnace": ((25, 15, 45), (255, 215, 90)),
     "abyss_stone": ((38, 32, 58), (86, 62, 128)),
+    "boundary_soil": ((25, 23, 31), (78, 42, 104)),
+    "boundary_stone": ((31, 30, 38), (98, 55, 132)),
+    "boundary_bricks": ((38, 36, 45), (156, 116, 52)),
+    "rift_core": ((54, 22, 76), (208, 104, 255)),
     "forgotten_soil": ((36, 64, 38), (92, 142, 58)),
     "forgotten_stone": ((38, 58, 44), (78, 114, 70)),
     "grove_seal": ((22, 48, 37), (76, 232, 168)),
@@ -386,6 +719,12 @@ BLOCK_TEXTURES = {
 }
 
 ENTITY_TEXTURES = {
+    "abyss_hound": (256, 128, (30, 18, 28), (218, 36, 72)),
+    "shadow_walker": (256, 128, (18, 16, 32), (112, 62, 238)),
+    "mana_leech": (256, 128, (42, 20, 44), (240, 82, 200)),
+    "crystal_parasite": (256, 128, (24, 38, 46), (80, 216, 232)),
+    "fallen_researcher": (256, 128, (34, 28, 38), (168, 90, 232)),
+    "boundary_watcher": (256, 128, (38, 32, 38), (176, 92, 238)),
     "abyss_sovereign": (64, 32, (36, 20, 60), (214, 162, 255)),
     "rotten_forest_guardian": (64, 64, (48, 86, 42), (132, 220, 84)),
     "grove_sentinel": (64, 64, (38, 62, 39), (198, 166, 74)),
@@ -406,6 +745,12 @@ ENTITY_TEXTURES = {
 }
 
 SPAWN_EGG_MODELS = [
+    "abyss_hound_spawn_egg",
+    "shadow_walker_spawn_egg",
+    "mana_leech_spawn_egg",
+    "crystal_parasite_spawn_egg",
+    "fallen_researcher_spawn_egg",
+    "boundary_watcher_spawn_egg",
     "abyss_sovereign_spawn_egg",
     "rotten_forest_guardian_spawn_egg",
     "grove_sentinel_spawn_egg",
@@ -527,8 +872,18 @@ def main():
 
     # エンティティテクスチャ
     for name, (width, height, base, accent) in ENTITY_TEXTURES.items():
-        write_png(os.path.join(ASSETS, "textures", "entity", name + ".png"),
-                  entity_texture(width, height, base, accent, name))
+        if name == "abyss_hound":
+            pixels = abyss_hound_texture()
+        elif name in OVERWORLD_MOB_TEXTURES:
+            pixels = OVERWORLD_MOB_TEXTURES[name]()
+        else:
+            pixels = entity_texture(width, height, base, accent, name)
+        write_png(os.path.join(ASSETS, "textures", "entity", name + ".png"), pixels)
+    write_png(os.path.join(ASSETS, "textures", "entity", "abyss_hound_glow.png"),
+              abyss_hound_texture(glow=True))
+    for name, texture_factory in OVERWORLD_MOB_TEXTURES.items():
+        write_png(os.path.join(ASSETS, "textures", "entity", name + "_glow.png"),
+                  texture_factory(glow=True))
 
     for name in SPAWN_EGG_MODELS:
         model = {"parent": "minecraft:item/template_spawn_egg"}

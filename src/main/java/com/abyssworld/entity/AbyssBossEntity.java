@@ -3,6 +3,9 @@ package com.abyssworld.entity;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.network.chat.Component;
+import net.minecraft.network.syncher.EntityDataAccessor;
+import net.minecraft.network.syncher.EntityDataSerializers;
+import net.minecraft.network.syncher.SynchedEntityData;
 import net.minecraft.server.level.ServerBossEvent;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.server.level.ServerPlayer;
@@ -19,8 +22,9 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.level.levelgen.Heightmap;
 
 public abstract class AbyssBossEntity extends AbyssMonsterEntity {
+    private static final EntityDataAccessor<Integer> DATA_PHASE =
+            SynchedEntityData.defineId(AbyssBossEntity.class, EntityDataSerializers.INT);
     private final ServerBossEvent bossEvent;
-    private int phase = 1;
 
     protected AbyssBossEntity(EntityType<? extends Monster> type, Level level, String translationKey,
                               BossEvent.BossBarColor barColor, int xpReward) {
@@ -41,6 +45,12 @@ public abstract class AbyssBossEntity extends AbyssMonsterEntity {
     }
 
     @Override
+    protected void defineSynchedData() {
+        super.defineSynchedData();
+        entityData.define(DATA_PHASE, 1);
+    }
+
+    @Override
     public void tick() {
         super.tick();
         if (!level().isClientSide) {
@@ -50,7 +60,11 @@ public abstract class AbyssBossEntity extends AbyssMonsterEntity {
     }
 
     protected int phase() {
-        return phase;
+        return entityData.get(DATA_PHASE);
+    }
+
+    public int getPhase() {
+        return phase();
     }
 
     protected void onPhaseChanged(int newPhase) {
@@ -88,9 +102,9 @@ public abstract class AbyssBossEntity extends AbyssMonsterEntity {
     private void updatePhase() {
         float ratio = getHealth() / getMaxHealth();
         int nextPhase = ratio <= 0.25F ? 3 : ratio <= 0.60F ? 2 : 1;
-        if (nextPhase > phase) {
-            phase = nextPhase;
-            onPhaseChanged(phase);
+        if (nextPhase > phase()) {
+            entityData.set(DATA_PHASE, nextPhase);
+            onPhaseChanged(nextPhase);
         }
     }
 

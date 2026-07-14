@@ -1,0 +1,23 @@
+{
+  "parent": "abyssworld:story/root",
+  "display": {
+    "icon": { "item": "abyssworld:boundary_bricks" },
+    "title": { "translate": "advancements.abyssworld.riftfall_citadel.title" },
+    "description": { "translate": "advancements.abyssworld.riftfall_citadel.description" },
+    "frame": "challenge",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "enter_citadel": {
+      "trigger": "minecraft:location",
+      "conditions": {
+        "player": {
+          "location": { "structure": "abyssworld:riftfall_citadel" }
+        }
+      }
+    }
+  },
+  "rewards": { "experience": 250 }
+}

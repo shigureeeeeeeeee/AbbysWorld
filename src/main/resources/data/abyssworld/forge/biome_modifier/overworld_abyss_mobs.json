@@ -1,0 +1,11 @@
+{
+  "type": "forge:add_spawns",
+  "biomes": "#minecraft:is_overworld",
+  "spawners": [
+    { "type": "abyssworld:abyss_hound", "weight": 34, "minCount": 2, "maxCount": 4 },
+    { "type": "abyssworld:shadow_walker", "weight": 15, "minCount": 1, "maxCount": 1 },
+    { "type": "abyssworld:mana_leech", "weight": 20, "minCount": 1, "maxCount": 3 },
+    { "type": "abyssworld:crystal_parasite", "weight": 10, "minCount": 1, "maxCount": 2 },
+    { "type": "abyssworld:fallen_researcher", "weight": 5, "minCount": 1, "maxCount": 1 }
+  ]
+}

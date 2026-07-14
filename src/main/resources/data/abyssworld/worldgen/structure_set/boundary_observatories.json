@@ -1,0 +1,12 @@
+{
+  "placement": {
+    "type": "minecraft:random_spread",
+    "salt": 19740613,
+    "separation": 28,
+    "spacing": 72,
+    "spread_type": "triangular"
+  },
+  "structures": [
+    { "structure": "abyssworld:boundary_observatory", "weight": 1 }
+  ]
+}

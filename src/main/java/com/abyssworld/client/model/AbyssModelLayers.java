@@ -7,6 +7,12 @@ import net.minecraft.resources.ResourceLocation;
 public final class AbyssModelLayers {
     public static final ModelLayerLocation CRYSTALLINE_ABYSS_ARMOR = layer("crystalline_abyss_armor");
     public static final ModelLayerLocation SINGULARITY_ABYSS_ARMOR = layer("singularity_abyss_armor");
+    public static final ModelLayerLocation ABYSS_HOUND = layer("abyss_hound");
+    public static final ModelLayerLocation SHADOW_WALKER = layer("shadow_walker");
+    public static final ModelLayerLocation MANA_LEECH = layer("mana_leech");
+    public static final ModelLayerLocation CRYSTAL_PARASITE = layer("crystal_parasite");
+    public static final ModelLayerLocation FALLEN_RESEARCHER = layer("fallen_researcher");
+    public static final ModelLayerLocation BOUNDARY_WATCHER = layer("boundary_watcher");
     public static final ModelLayerLocation ABYSS_SOVEREIGN = layer("abyss_sovereign");
     public static final ModelLayerLocation ROTTEN_FOREST_GUARDIAN = layer("rotten_forest_guardian");
     public static final ModelLayerLocation GROVE_SENTINEL = layer("grove_sentinel");
